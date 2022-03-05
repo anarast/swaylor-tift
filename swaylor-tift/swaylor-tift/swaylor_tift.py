@@ -13,7 +13,7 @@ def main():
   send_tweet(parsed_lyrics, client)
   
 def generate_lyrics():
-  return sample_model(model_name='lyric', nsamples=1, length=300)
+  return sample_model(model_name='lyric', nsamples=1, length=100)
 
 def parse_lyrics(raw_lyrics: str):
   lyric_array = raw_lyrics.split("\n")
@@ -22,7 +22,7 @@ def parse_lyrics(raw_lyrics: str):
   
   parsed_array = []
   
-  for x in range(start_index, end_index):
+  for x in range(0, len(lyric_array) - 2):
     if lyric_array[x] != '':
       parsed_array.append(lyric_array[x])
   
